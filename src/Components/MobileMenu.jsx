@@ -2,7 +2,8 @@
 import { Modal, Backdrop, Box, Slide } from '@mui/material';
 import { IoMdClose } from "react-icons/io";
 import { useGlobalContext } from '../context';
-import { Link } from 'react-scroll'
+import { Link } from 'react-scroll';
+import { useNavigate } from 'react-router-dom';
 import './component.scss'
 
 const style = {
@@ -30,6 +31,8 @@ function MobileMenu(props) {
 
     const close = () => setOpenMobileMenu(false)
 
+    const navigate = useNavigate();
+
     return (
         <Modal
             open={openMobileMenu}
@@ -54,6 +57,18 @@ function MobileMenu(props) {
                     />
                     {
                         headerData.map((item) => (
+                            item.href ?
+                            <span
+                                className='navigationItem mobileMenuItem'
+                                // onClick={close}
+                                onClick = {() => {
+                                    navigate(`${item.href}`);
+                                    close();
+                                }}
+                            >
+                                {item.title}
+                            </span>
+                            :
                             <Link
                                 to={item.link}
                                 smooth={true}
