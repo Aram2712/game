@@ -15,7 +15,7 @@ function ProductInfoSection({ product }) {
     const navigate = useNavigate();
 
     const decrement = () => {
-        if (currentProduct.cardCount > 0) {
+        if (currentProduct.cardCount > 1) {
             setCurrentProduct(prevState => { return { ...prevState, cardCount: prevState.cardCount - 1 } });
         }
     }

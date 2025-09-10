@@ -56,7 +56,7 @@ function OurProductSection() {
                                     <div className={style.sliderItemDataBox}>
                                         <div className={style.sliderItemNamePriceBox}>
                                             <span className={style.sliderItemName}>NAME OF PRODUCT</span>
-                                            <span className={style.sliderItemPrice}>999 $</span>
+                                            <span className={style.sliderItemPrice}>999 €</span>
                                         </div>
                                         <span className={style.sliderItemArrowSpan}>
                                             <FaChevronRight

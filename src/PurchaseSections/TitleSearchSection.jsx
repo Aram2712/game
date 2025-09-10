@@ -7,8 +7,12 @@ import delivery from '../assets/delivery.svg';
 import support from '../assets/support.svg';
 import secure from '../assets/secure.svg';
 import huge from '../assets/huge.svg';
+import {useNavigate} from "react-router-dom";
 
 function TitleSearchSection() {
+
+    const navigate = useNavigate();
+
     return (
         <section className = {style.titleSection}>
             <div className = {style.titleBox}>
@@ -34,11 +38,22 @@ function TitleSearchSection() {
                     <input className={style.input} placeholder={'Search for products...'}/>
                 </span>
                 <div className={style.buttonsBox}>
-                    <button className={style.shopNowBtn}>
+                    <button
+                        className={style.shopNowBtn}
+                        onClick={() => {navigate('/purchase/payment')}}
+                    >
                         <GiShoppingCart className={style.buttonIcon}/>
                         SHOP NOW
                     </button>
-                    <button className={style.reviewBtnBox}>
+                    <button
+                        className={style.reviewBtnBox}
+                        onClick = {() => {
+                            window.scrollTo({
+                                top: document.body.scrollHeight,
+                                behavior: "smooth",
+                            });
+                        }}
+                    >
                         <img src = {viewReview}  alt = 'review icon' style={{ marginRight: '10px' }} />
                         VIEW REVIEWS
                     </button>

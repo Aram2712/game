@@ -22,7 +22,7 @@ function ProductReviewSection() {
                                 <Rating
                                     initialValue={3}
                                     iconsCount={5}
-                                    size={25}
+                                    size={30}
                                     fillColor={'#FF9F19'}
                                     emptyColor={'#323232'}
                                     allowHover={false}

@@ -267,6 +267,8 @@
   background-image: url("../assets/previewImage.svg");
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 10px;
+  overflow: hidden;
   //border: 1px solid white;
 }
 
@@ -279,8 +281,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 5px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0) 100%);
+  padding: 10px;
+  background: linear-gradient(to bottom, #0A0A0A00, #0A0A0A);
   //border: 1px solid white
 }
 
@@ -292,7 +294,7 @@
 .sliderItemName {
   color: white;
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -300,18 +302,18 @@
   color: #ff9f19;
   font-family: Verdana;
   font-weight: bold;
-  font-size: 17px;
+  font-size: 24px;
 }
 
 .sliderItemArrowSpan {
-  width: 35px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #4a4a4a80;
   border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -320,12 +322,12 @@
   justify-content: center;
   align-items: center;
   background-color: #4a4a4a80;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
-  padding: 3px 8px;
+  padding: 5px 8px;
   color: #ffffff80;
   font-family: "Poppins", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .ProductsCatalogSection {

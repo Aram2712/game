@@ -124,7 +124,7 @@ function ProductsCatalogSection() {
                             <div className={style.sliderItemDataBox} style={{ background: 'none', alignItems: 'flex-end' }}>
                                 <div className={style.sliderItemNamePriceBox}>
                                     <span className={style.sliderItemName}>{prod.name}</span>
-                                    <span className={style.sliderItemPrice}>{prod.price} $</span>
+                                    <span className={style.sliderItemPrice}>{prod.price} €</span>
                                 </div>
                                 <span className={style.sliderItemStockSpan}>
                                     999 in Stock
