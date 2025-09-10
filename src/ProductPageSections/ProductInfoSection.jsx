@@ -5,11 +5,13 @@ import { useState } from "react";
 import ProductReviewSection from '../ProductPageSections/ProductReviewSection.jsx';
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from '../context.jsx';
+import { HiOutlineMinus } from "react-icons/hi";
+import { HiOutlinePlus } from "react-icons/hi";
 
 function ProductInfoSection({ product }) {
 
     const { card, setCard } = useGlobalContext();
-    const [currentProduct, setCurrentProduct] = useState(product);
+    const [currentProduct, setCurrentProduct] = useState({ ...product, cardCount: 1 });
     const navigate = useNavigate();
 
     const decrement = () => {
@@ -59,14 +61,14 @@ function ProductInfoSection({ product }) {
                                 className={style.productCountBtn}
                                 onClick={decrement}
                             >
-                                -
+                                <HiOutlineMinus style={{ fontSize: '18px', color: '#ffffff4d' }} />
                             </button>
                             {currentProduct?.cardCount || 0}
                             <button
                                 className={style.productCountBtn}
                                 onClick={increment}
                             >
-                                +
+                                <HiOutlinePlus style={{ fontSize: '18px', color: '#ffffff4d' }} />
                             </button>
                         </div>
                     </div>

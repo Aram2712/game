@@ -7,7 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
 import MobileMenu from './MobileMenu';
 import titleIcon from '../assets/titleIcon.svg'
-import cartIcon from '../assets/card.svg'
+import cartIcon from '../assets/cart.svg'
 
 function Header() {
 
