@@ -25,7 +25,7 @@ function OurProductSection() {
             <div className={style.ourProductSliderBox}>
                 <Swiper
                     spaceBetween={20}
-                    slidesPerView={'auto'}
+                    slidesPerView={1}
                     breakpoints={{
                         640: {
                             slidesPerView: 2,
@@ -36,18 +36,22 @@ function OurProductSection() {
                             spaceBetween: 20,
                         },
                     }}
-                    onSwiper={(swiper) => console.log(swiper)}
+                    freeMode={true}
+                    freeModeMomentum={false}
+                    speed={8000}
                     loop={true}
-                    speed={10000}
+                    allowTouchMove={false}
                     modules={[Autoplay]}
                     autoplay={{
-                        delay: 0,
+                        delay: 1,
                         disableOnInteraction: false,
+                        pauseOnMouseEnter: false,
+                        stopOnLastSlide: false,
                     }}
                 >
                     {
                         Array.from({ length: 10 }).map((_, i) => (
-                            <SwiperSlide key={i}>
+                            <SwiperSlide key={i} className="!w-auto">
                                 <div className={style.ourProductCaruselItem}>
                                     <div className={style.sliderItemDataBox}>
                                         <div className={style.sliderItemNamePriceBox}>

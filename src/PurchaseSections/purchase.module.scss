@@ -380,6 +380,10 @@
   margin-top: 40px;
 }
 
+.swiper-free-mode > .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
 .productItem {
   flex: 1 1 calc(25% - 10px);
   max-width: 350px;

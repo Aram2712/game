@@ -1,5 +1,3 @@
-
-
 .paymentPage {
   margin-top: 120px;
   display: flex;
@@ -16,7 +14,7 @@
   justify-content: space-between;
   //height: 400px;
   //background-color: #ef6731;
-  border-right: 1px solid #FFFFFF1A;
+  border-right: 1px solid #ffffff1a;
   padding: 0 10px 0 0;
 }
 
@@ -31,7 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #FFFFFF1A;
+  border-bottom: 1px solid #ffffff1a;
   padding: 15px 0;
 }
 
@@ -50,7 +48,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 0 10px;
 }
 
@@ -59,24 +57,24 @@
   font-size: 14px;
 }
 
-.productNameBox>span {
+.productNameBox > span {
   color: #666565;
 }
 
 .productPriceBox {
-  color: #FF9F19;
+  color: #ff9f19;
   font-size: 18px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .productDeleteIcon {
-  border: 1px solid #DF3A3A;
+  border: 1px solid #df3a3a;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4px;
   border-radius: 5px;
-  background-color: #DF3A3A4D;
+  background-color: #df3a3a4d;
   cursor: pointer;
 }
 
@@ -87,14 +85,14 @@
   justify-content: space-between;
 }
 
-.allProductsTotalPrice>span:first-child {
+.allProductsTotalPrice > span:first-child {
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
 }
 
-.allProductsTotalPrice>span:last-child {
-  color: #FF9F19;
+.allProductsTotalPrice > span:last-child {
+  color: #ff9f19;
   font-size: 18px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -104,7 +102,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 10px;
+  padding: 10px;
 }
 
 .paymentMethodsInputsContainer {
@@ -115,12 +113,12 @@
 
 .paymentMethodHeadText {
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
 }
 
-.paymentMethodHeadText>span:first-child {
-  color: #EF6731;
+.paymentMethodHeadText > span:first-child {
+  color: #ef6731;
   margin-right: 10px;
   font-weight: bold;
 }
@@ -129,17 +127,17 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-top: 20px;
 }
 
-.paymentMethodInputBox>label {
+.paymentMethodInputBox > label {
   color: white;
 }
 
 .paymentMethodInput {
   height: 50px;
-  border: 1px solid #4A4A4A80;
+  border: 1px solid #4a4a4a80;
   outline: none;
   background: transparent;
   color: white;
@@ -154,7 +152,7 @@
   height: 50px;
   display: flex;
   flex-direction: column;
-  border: 1px solid #4A4A4A80;
+  border: 1px solid #4a4a4a80;
   padding: 0 10px;
   margin-top: 10px;
   border-radius: 8px;
@@ -163,18 +161,18 @@
 
 .paymentMethodSelectIcon {
   padding: 5px;
-  border: 1px solid #4A4A4A80;
+  border: 1px solid #4a4a4a80;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #FFFFFF0F;
+  background-color: #ffffff0f;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .paymentMethodSelectPlaceholder {
   font-family: "Poppins", sans-serif;
-  color: #FFFFFF4D;
+  color: #ffffff4d;
   display: flex;
   align-items: center;
 }
@@ -190,8 +188,7 @@
 
 .selectOptionsBox {
   width: 100%;
-  min-height: 200px;
-  background-color: #1C1C1C;
+  background-color: #1c1c1c;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -205,8 +202,8 @@
 .selectOptionElement {
   width: 100%;
   height: 50px;
-  border: 1px solid #4A4A4A80;
-  margin-top: 10px;
+  border: 1px solid #4a4a4a80;
+  margin: 5px 0;
 }
 
 .selectOptionElement {
@@ -219,7 +216,7 @@
 }
 
 .selectOptionElement:hover {
-  background-color: #4A4A4A80;
+  background-color: #4a4a4a80;
 }
 
 .paymentMethodSelectImg {
@@ -229,7 +226,7 @@
 .proceedToPaymentBtn {
   width: 100%;
   height: 50px;
-  background: linear-gradient(to right, #FF9F19, #EF6731);
+  background: linear-gradient(to right, #ff9f19, #ef6731);
   font-family: "Poppins", sans-serif;
   color: black;
   outline: none;
@@ -252,16 +249,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #FFFFFF1A;
-  background-color: #4A4A4A80;
+  border: 1px solid #ffffff1a;
+  background-color: #4a4a4a80;
   border-radius: 5px;
   margin-top: 20px;
   padding: 0 10px;
 }
 
 .paymentMethodCode {
-  font-family: 'Poppins', sans-serif;
-  color: #FFFFFF4D;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff4d;
 }
 
 .paymentDataBOx {
@@ -273,13 +270,13 @@
 }
 
 .paymentDataTitle {
-  font-family: 'Poppins', sans-serif;
-  color: #FFFFFF80
+  font-family: "Poppins", sans-serif;
+  color: #ffffff80;
 }
 
 .paymentDataValue {
-  font-family: 'Poppins', sans-serif;
-  color: #FFFFFF
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
 }
 
 .paymentAutomaticallyTextBox {
@@ -287,11 +284,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #EF6731;
+  border: 1px solid #ef6731;
   padding: 10px;
   margin-top: 15px;
-  font-family: 'Poppins', sans-serif;
-  color: #EF6731;
+  font-family: "Poppins", sans-serif;
+  color: #ef6731;
   border-radius: 5px;
 }
 
@@ -314,9 +311,9 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #EF6731;
+  background-color: #ef6731;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -326,10 +323,10 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid #EF6731;
-  background-color: #EF67311A;
-  color: #EF6731;
-  font-family: 'Poppins', sans-serif;
+  border: 1px solid #ef6731;
+  background-color: #ef67311a;
+  color: #ef6731;
+  font-family: "Poppins", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -339,7 +336,7 @@
   width: 1px;
   height: calc(380px - 80px);
   border: 1px solid transparent;
-  border-image: linear-gradient(to bottom, #EF6731, #EF673100) 1;
+  border-image: linear-gradient(to bottom, #ef6731, #ef673100) 1;
 }
 
 .qrAndOtherDataBox {
@@ -348,14 +345,14 @@
 }
 
 .sendPaymenttext {
-  color: #EF6731;
-  font-family: 'Poppins', sans-serif;
+  color: #ef6731;
+  font-family: "Poppins", sans-serif;
   margin-top: 5px;
 }
 
 .sendPaymentQrText {
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   margin-top: 10px;
 }
@@ -370,7 +367,6 @@
   margin-top: 5px;
 }
 
-
 @media screen and (max-width: 1500px) {
   .paymentPage {
     width: 90%;
@@ -382,13 +378,19 @@
     flex-direction: column;
     width: 100%;
   }
-  .paymentProduct, .paymentMethods, .confirmSection {
+  .paymentProduct,
+  .paymentMethods,
+  .confirmSection {
     width: 100%;
   }
-  .proceedToPaymentBtn, .paymentMethods, .confirmSection {
+  .proceedToPaymentBtn,
+  .paymentMethods,
+  .confirmSection {
     margin-top: 20px;
   }
-  .paymentAutomaticallyTextBox, .sendPaymenttext, .sendPaymentQrText {
+  .paymentAutomaticallyTextBox,
+  .sendPaymenttext,
+  .sendPaymentQrText {
     font-size: 13px;
   }
 
