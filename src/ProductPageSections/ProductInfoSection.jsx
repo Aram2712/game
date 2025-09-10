@@ -2,34 +2,39 @@
 import style from './product.module.scss';
 import productImg from '../assets/previewImage.svg';
 import { useState } from "react";
-import {GiShoppingCart} from "react-icons/gi";
-import viewReview from "../assets/viewReviews.svg";
 import ProductReviewSection from '../ProductPageSections/ProductReviewSection.jsx';
 import { useNavigate } from "react-router-dom";
+import { useGlobalContext } from '../context.jsx';
 
-function ProductInfoSection() {
+function ProductInfoSection({ product }) {
 
-    const [count, setCount] = useState(0);
+    const { card, setCard } = useGlobalContext();
+    const [currentProduct, setCurrentProduct] = useState(product);
     const navigate = useNavigate();
-    const decrements = () => {
-        if(count>0) {
-            setCount(count => --count)
+
+    const decrement = () => {
+        if (currentProduct.cardCount > 0) {
+            setCurrentProduct(prevState => { return { ...prevState, cardCount: prevState.cardCount - 1 } });
         }
     }
 
     const increment = () => {
-        setCount(count => ++count);
+        setCurrentProduct(prevState => { return { ...prevState, cardCount: prevState.cardCount + 1 } });
+    }
+
+    const addToCard = () => {
+        setCard([...card, currentProduct]);
     }
 
     return (
         <div className={style.productPageContainer}>
             <div className={style.productInfoBox}>
                 <div className={style.productInfoImageBox}>
-                    <img src = {productImg} className={style.productInfoImage} alt = 'product image'/>
+                    <img src={productImg} className={style.productInfoImage} alt='product image' />
                 </div>
                 <div className={style.productDataBox}>
                     <div className={style.productInfoNameBox}>
-                        <h2>NAME OF PRODUCT</h2>
+                        <h2>{product?.name}</h2>
                         <span className={style.productInfoStockSpan}>
                             In Stock
                         </span>
@@ -39,7 +44,7 @@ function ProductInfoSection() {
                             Total price
                         </span>
                         <span className={style.productTotalPriceValueText}>
-                            999 €
+                            {product.price} €
                         </span>
                     </div>
                     <p className={style.productInfoDescription}>
@@ -52,11 +57,11 @@ function ProductInfoSection() {
                         <div className={style.productInfoCountAndBtnBox}>
                             <button
                                 className={style.productCountBtn}
-                                onClick={ decrements }
+                                onClick={decrement}
                             >
                                 -
                             </button>
-                            { count }
+                            {currentProduct?.cardCount || 0}
                             <button
                                 className={style.productCountBtn}
                                 onClick={increment}
@@ -66,8 +71,11 @@ function ProductInfoSection() {
                         </div>
                     </div>
                     <div className={style.buttonsBox}>
-                        <button className={style.shopNowBtn}>
-                           Add to Card
+                        <button
+                            className={style.shopNowBtn}
+                            onClick={addToCard}
+                        >
+                            Add to Card
                         </button>
                         <button
                             className={style.reviewBtnBox}
@@ -78,7 +86,7 @@ function ProductInfoSection() {
                     </div>
                 </div>
             </div>
-            <ProductReviewSection/>
+            <ProductReviewSection />
         </div>
     )
 }

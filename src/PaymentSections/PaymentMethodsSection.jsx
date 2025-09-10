@@ -1,7 +1,7 @@
 import style from './payment.module.scss';
-import {IoChevronDownOutline} from "react-icons/io5";
-import {IoChevronUpOutline} from "react-icons/io5";
-import {useState} from "react";
+import { IoChevronDownOutline } from "react-icons/io5";
+import { IoChevronUpOutline } from "react-icons/io5";
+import { useState } from "react";
 import crypto from '../assets/crypto.svg';
 import paypal from "../assets/paypal.svg";
 import stripe from "../assets/stripe.svg";
@@ -142,219 +142,240 @@ function PaymentMethodsSection(props) {
 
     return (
         !showConfirmed ?
-        <div className={style.paymentMethods}>
-            <div className={style.paymentMethodsInputsContainer}>
-                <span className={style.paymentMethodHeadText}>
-                    <span>#1</span>
-                    <span>Order Information</span>
-                </span>
-                <div className={style.paymentMethodInputBox}>
-                    <label>
-                        Email Address
-                    </label>
-                    <input type={'text'} className={style.paymentMethodInput} placeholder={'Enter Your Email'}/>
-                </div>
-                <div className={style.paymentMethodInputBox}>
-                    <label>
-                        Coupon Code
-                    </label>
-                    <input type={'text'} className={style.paymentMethodInput} placeholder={'Enter coupon if you have'}/>
-                </div>
-                <div className={style.paymentMethodInputBox}>
-                    <label>
-                        Choose Payment Method
-                    </label>
-                    <div className={style.paymentMethodSelect}>
-                        <div className={style.selectPlaceholderAndIconBox} onClick={() => setShowPayment(!showPayment)}>
-                            {
-                                choosenPayment ?
-                                    <span className={style.paymentMethodSelectPlaceholder}>
-                                        <img src={choosenPayment.icon} className={style.paymentMethodSelectImg}
-                                             alt='icon'/>
-                                        {choosenPayment.title}
-                                    </span>
-                                    :
-                                    <span className={style.paymentMethodSelectPlaceholder}>
-                                        Choose Payment Method
-                                    </span>
-                            }
-                            <span
-                                className={style.paymentMethodSelectIcon}
+            <div className={style.paymentMethods}>
+                <div className={style.paymentMethodsInputsContainer}>
+                    <span className={style.paymentMethodHeadText}>
+                        <span>#1</span>
+                        <span>Order Information</span>
+                    </span>
+                    <div className={style.paymentMethodInputBox}>
+                        <label>
+                            Email Address
+                        </label>
+                        <input type={'text'} className={style.paymentMethodInput} placeholder={'Enter Your Email'} />
+                    </div>
+                    <div className={style.paymentMethodInputBox}>
+                        <label>
+                            Coupon Code
+                        </label>
+                        <input type={'text'} className={style.paymentMethodInput} placeholder={'Enter coupon if you have'} />
+                    </div>
+                    <div className={style.paymentMethodInputBox}>
+                        <label>
+                            Choose Payment Method
+                        </label>
+                        <div className={style.paymentMethodSelect}>
+                            <div
+                                className={style.selectPlaceholderAndIconBox}
+                                onClick={() => {
+                                    setShowPayment(!showPayment);
+                                    setShowCryptoMethod(false);
+                                    setShowNetwork(false);
+                                }}
                             >
                                 {
-                                    showPayment ?
-                                        <IoChevronUpOutline
-                                            style={{color: '#FFFFFF4D'}}
-                                        />
+                                    choosenPayment ?
+                                        <span className={style.paymentMethodSelectPlaceholder}>
+                                            <img src={choosenPayment.icon} className={style.paymentMethodSelectImg}
+                                                alt='icon' />
+                                            {choosenPayment.title}
+                                        </span>
                                         :
-                                        <IoChevronDownOutline
-                                            style={{color: '#FFFFFF4D'}}
-                                        />
+                                        <span className={style.paymentMethodSelectPlaceholder}>
+                                            Choose Payment Method
+                                        </span>
                                 }
-                            </span>
-                        </div>
-                        {
-                            showPayment ?
-                                <div className={style.selectOptionsBox}>
+                                <span
+                                    className={style.paymentMethodSelectIcon}
+                                >
                                     {
-                                        paymentTypes.map((option, index) => (
-                                            <span
-                                                className={style.selectOptionElement}
-                                                onClick={() => {
-                                                    setChoosenPayment(option);
-                                                    setShowPayment(false)
-                                                }}
-                                            >
-                                                <img src={option.icon} className={style.paymentMethodSelectImg}/>
-                                                {option.title}
-                                            </span>
-                                        ))
-                                    }
-                                </div>
-                                :
-                                null
-                        }
-                    </div>
-                </div>
-                {
-                    choosenPayment?.subCategories ?
-                        <div className={style.paymentMethodInputBox}>
-                            <label>
-                                Choose Crypto Method
-                            </label>
-                            <div className={style.paymentMethodSelect}>
-                                <div className={style.selectPlaceholderAndIconBox}
-                                     onClick={() => setShowCryptoMethod(!showCryptoMethod)}>
-                                    {
-                                        choosenCryptoMethod ?
-                                            <span className={style.paymentMethodSelectPlaceholder}>
-                                                <img src={choosenCryptoMethod.icon}
-                                                     className={style.paymentMethodSelectImg}
-                                                     alt='icon'/>
-                                                {choosenCryptoMethod.title}
-                                            </span>
-                                            :
-                                            <span className={style.paymentMethodSelectPlaceholder}>
-                                                Choose Crypto Method
-                                            </span>
-                                    }
-                                    <span
-                                        className={style.paymentMethodSelectIcon}
-                                    >
-                                    {
-                                        showCryptoMethod ?
+                                        showPayment ?
                                             <IoChevronUpOutline
-                                                style={{color: '#FFFFFF4D'}}
+                                                style={{ color: '#FFFFFF4D' }}
                                             />
                                             :
                                             <IoChevronDownOutline
-                                                style={{color: '#FFFFFF4D'}}
+                                                style={{ color: '#FFFFFF4D' }}
                                             />
                                     }
-                                    </span>
-                                </div>
-                                {
-                                    showCryptoMethod ?
-                                        <div className={style.selectOptionsBox}>
-                                            {
-                                                choosenPayment?.subCategories?.map((option, index) => (
-                                                    <span
-                                                        className={style.selectOptionElement}
-                                                        onClick={() => {
-                                                            setChoosenCryptoMethod(option);
-                                                            setShowCryptoMethod(false)
-                                                        }}
-                                                    >
-                                                        <img src={option.icon}
-                                                             className={style.paymentMethodSelectImg}/>
-                                                        {option.title}
-                                                    </span>
-                                                ))
-                                            }
-                                        </div>
-                                        :
-                                        null
-                                }
+                                </span>
                             </div>
+                            {
+                                showPayment ?
+                                    <div className={style.selectOptionsBox}>
+                                        {
+                                            paymentTypes.map((option, index) => (
+                                                <span
+                                                    className={style.selectOptionElement}
+                                                    onClick={() => {
+                                                        setChoosenPayment(option);
+                                                        setShowPayment(false)
+                                                    }}
+                                                >
+                                                    <img src={option.icon} className={style.paymentMethodSelectImg} />
+                                                    {option.title}
+                                                </span>
+                                            ))
+                                        }
+                                    </div>
+                                    :
+                                    null
+                            }
                         </div>
-                        :
-                        null
-                }
-                {
-                    choosenCryptoMethod ?
-                        <div className={style.paymentMethodInputBox}>
-                            <label>
-                                Choose Network
-                            </label>
-                            <div className={style.paymentMethodSelect}>
-                                <div className={style.selectPlaceholderAndIconBox}
-                                     onClick={() => setShowNetwork(!showNetwork)}>
-                                    {
-                                        choosenNetwork ?
-                                            <span className={style.paymentMethodSelectPlaceholder}>
-                                                <img src={choosenNetwork.icon} className={style.paymentMethodSelectImg}
-                                                    alt='icon'/>
-                                                {choosenNetwork.title}
-                                            </span>
-                                            :
-                                            <span className={style.paymentMethodSelectPlaceholder}>
-                                                Choose Network
-                                            </span>
-                                    }
-                                    <span
-                                        className={style.paymentMethodSelectIcon}
+                    </div>
+                    {
+                        choosenPayment?.subCategories ?
+                            <div className={style.paymentMethodInputBox}>
+                                <label>
+                                    Choose Crypto Method
+                                </label>
+                                <div className={style.paymentMethodSelect}>
+                                    <div className={style.selectPlaceholderAndIconBox}
+                                        onClick={() => {
+                                            setShowCryptoMethod(!showCryptoMethod)
+                                            setShowPayment(false);
+                                            setShowNetwork(false);
+                                        }}
                                     >
                                         {
-                                            showNetwork ?
-                                                <IoChevronUpOutline
-                                                    style={{color: '#FFFFFF4D'}}
-                                                />
+                                            choosenCryptoMethod ?
+                                                <span className={style.paymentMethodSelectPlaceholder}>
+                                                    <img src={choosenCryptoMethod.icon}
+                                                        className={style.paymentMethodSelectImg}
+                                                        alt='icon' />
+                                                    {choosenCryptoMethod.title}
+                                                </span>
                                                 :
-                                                <IoChevronDownOutline
-                                                    style={{color: '#FFFFFF4D'}}
-                                                />
+                                                <span className={style.paymentMethodSelectPlaceholder}>
+                                                    Choose Crypto Method
+                                                </span>
                                         }
-                                    </span>
-                                </div>
-                                {
-                                    showNetwork ?
-                                        <div className={style.selectOptionsBox}>
+                                        <span
+                                            className={style.paymentMethodSelectIcon}
+                                        >
                                             {
-                                                choosenCryptoMethod?.networks?.map((option, index) => (
-                                                    <span
-                                                        className={style.selectOptionElement}
-                                                        onClick={() => {
-                                                            setChoosenNetwork(option);
-                                                            setShowNetwork(false)
-                                                        }}
-                                                    >
-                                                        <img src={option.icon} className={style.paymentMethodSelectImg}/>
-                                                        {option.title}
-                                                    </span>
-                                                ))
+                                                showCryptoMethod ?
+                                                    <IoChevronUpOutline
+                                                        style={{ color: '#FFFFFF4D' }}
+                                                    />
+                                                    :
+                                                    <IoChevronDownOutline
+                                                        style={{ color: '#FFFFFF4D' }}
+                                                    />
                                             }
-                                        </div>
-                                        :
-                                        null
-                                }
+                                        </span>
+                                    </div>
+                                    {
+                                        showCryptoMethod ?
+                                            <div className={style.selectOptionsBox}>
+                                                {
+                                                    choosenPayment?.subCategories?.map((option, index) => (
+                                                        <span
+                                                            className={style.selectOptionElement}
+                                                            onClick={() => {
+                                                                setChoosenCryptoMethod(option);
+                                                                setShowCryptoMethod(false)
+                                                            }}
+                                                        >
+                                                            <img src={option.icon}
+                                                                className={style.paymentMethodSelectImg} />
+                                                            {option.title}
+                                                        </span>
+                                                    ))
+                                                }
+                                            </div>
+                                            :
+                                            null
+                                    }
+                                </div>
                             </div>
-                        </div>
-                        :
-                        null
-                }
+                            :
+                            null
+                    }
+                    {
+                        choosenCryptoMethod ?
+                            <div className={style.paymentMethodInputBox}>
+                                <label>
+                                    Choose Network
+                                </label>
+                                <div className={style.paymentMethodSelect}>
+                                    <div
+                                        className={style.selectPlaceholderAndIconBox}
+                                        onClick={() => {
+                                            setShowNetwork(!showNetwork)
+                                            setShowCryptoMethod(false);
+                                            setShowPayment(false);
+                                        }}
+                                    >
+                                        {
+                                            choosenNetwork ?
+                                                <span className={style.paymentMethodSelectPlaceholder}>
+                                                    <img src={choosenNetwork.icon} className={style.paymentMethodSelectImg}
+                                                        alt='icon' />
+                                                    {choosenNetwork.title}
+                                                </span>
+                                                :
+                                                <span className={style.paymentMethodSelectPlaceholder}>
+                                                    Choose Network
+                                                </span>
+                                        }
+                                        <span
+                                            className={style.paymentMethodSelectIcon}
+                                        >
+                                            {
+                                                showNetwork ?
+                                                    <IoChevronUpOutline
+                                                        style={{ color: '#FFFFFF4D' }}
+                                                    />
+                                                    :
+                                                    <IoChevronDownOutline
+                                                        style={{ color: '#FFFFFF4D' }}
+                                                    />
+                                            }
+                                        </span>
+                                    </div>
+                                    {
+                                        showNetwork ?
+                                            <div className={style.selectOptionsBox}>
+                                                {
+                                                    choosenCryptoMethod?.networks?.map((option, index) => (
+                                                        <span
+                                                            key={option.id}
+                                                            className={style.selectOptionElement}
+                                                            onClick={() => {
+                                                                setChoosenNetwork(option);
+                                                                setShowNetwork(false)
+                                                            }}
+                                                        >
+                                                            <img src={option.icon} className={style.paymentMethodSelectImg} />
+                                                            {option.title}
+                                                        </span>
+                                                    ))
+                                                }
+                                            </div>
+                                            :
+                                            null
+                                    }
+                                </div>
+                            </div>
+                            :
+                            null
+                    }
+                </div>
+                <button
+                    className={style.proceedToPaymentBtn}
+                    onClick={() => {
+                        if (choosenCryptoMethod || choosenPayment) setShowConfirmed(true);
+                    }}
+                >
+                    Proceed to Payment
+                </button>
             </div>
-            <button
-                className={style.proceedToPaymentBtn}
-                onClick = {() => setShowConfirmed(true)}
-            >
-                Proceed to Payment
-            </button>
-        </div>
-        :
-        (choosenCryptoMethod || choosenPayment) &&
-        <Confirm
-            paymentType = { choosenCryptoMethod || choosenPayment }
-        />
+            :
+            (choosenCryptoMethod || choosenPayment) &&
+            <Confirm
+                paymentType={choosenCryptoMethod || choosenPayment}
+            />
     )
 }
 

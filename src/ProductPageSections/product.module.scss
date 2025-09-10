@@ -1,14 +1,13 @@
-
 .productPageContainer {
-  width: 99vw;
+  width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   background:
-          linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%),   /* слева */
-          linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%),   /* справа */
-          url("../assets/purchase.svg");
+    linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%),
+    /* слева */ linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%),
+    /* справа */ url("../assets/purchase.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -50,18 +49,18 @@
   justify-content: space-between;
 }
 
-.productInfoNameBox>h2 {
+.productInfoNameBox > h2 {
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: clamp(24px, 2vw, 48px);
   font-weight: 500;
   margin: 0;
 }
 
 .productInfoStockSpan {
-  color: #44C54C;
-  font-family: 'Poppins', sans-serif;
-  background-color: #44C54C1A;
+  color: #44c54c;
+  font-family: "Poppins", sans-serif;
+  background-color: #44c54c1a;
   padding: 7px 15px;
   border-radius: 5px;
 }
@@ -72,27 +71,27 @@
   align-items: center;
   justify-content: space-between;
   padding: 5px 15px;
-  border: 1px solid #FFFFFF1A;
-  background-color: #4A4A4A40;
+  border: 1px solid #ffffff1a;
+  background-color: #4a4a4a40;
   border-radius: 5px;
 }
 
 .productTotalPriceTitle {
-  color: #FFFFFF;
-  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 500;
 }
 
 .productTotalPriceValueText {
-  color: #FF9F19;
-  font-family: 'Poppins', sans-serif;
+  color: #ff9f19;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
 }
 
 .productInfoDescription {
   width: 100%;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 15px;
   color: white;
   margin-top: 10px;
@@ -105,8 +104,8 @@
   margin-top: 20px;
 }
 
-.productInfoQuantityBox>label {
-  font-family: 'Poppins', sans-serif;
+.productInfoQuantityBox > label {
+  font-family: "Poppins", sans-serif;
   font-size: 15px;
   color: white;
 }
@@ -117,21 +116,21 @@
   align-items: center;
   justify-content: space-between;
   padding: 5px;
-  border: 1px solid #FFFFFF1A;
-  background-color: #4A4A4A40;
+  border: 1px solid #ffffff1a;
+  background-color: #4a4a4a40;
   border-radius: 5px;
   margin-top: 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: white;
 }
 
 .productCountBtn {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   width: 30px;
   height: 30px;
-  background-color: #4A4A4A40;
+  background-color: #4a4a4a40;
   border: none;
-  color:#FFFFFF4D;
+  color: #ffffff4d;
   border-radius: 5px;
   cursor: pointer;
   font-size: 22px;
@@ -139,7 +138,7 @@
 }
 
 .productCountBtn:active {
-  background-color: #FF9F19;
+  background-color: #ff9f19;
 }
 
 .buttonsBox {
@@ -150,7 +149,7 @@
   margin-top: 10px;
 }
 
-.buttonsBox>button {
+.buttonsBox > button {
   width: 49%;
   height: 50px;
   border: none;
@@ -163,12 +162,12 @@
 }
 
 .shopNowBtn {
-  background: linear-gradient(to right, #FF9F19, #EF6731);
+  background: linear-gradient(to right, #ff9f19, #ef6731);
 }
 
 .reviewBtnBox {
   background: transparent;
-  border: 1px solid #FFFFFF1A !important;
+  border: 1px solid #ffffff1a !important;
   color: white;
 }
 
@@ -179,12 +178,12 @@
   align-items: flex-start;
   //border: 1px solid white;
   margin: 50px auto 0 auto;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-.productReviewSection>h4 {
+.productReviewSection > h4 {
   font-size: 18px;
-  color: #EF6731;
+  color: #ef6731;
 }
 
 .productReviewsBox {
@@ -202,8 +201,8 @@
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  border: 1px solid rgba(255,255,255,0.2);
-  background-color: #1A1A1A;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #1a1a1a;
   padding: 15px;
 }
 
@@ -212,13 +211,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 13px;
   color: #666565;
 }
 
-.reviewTextDateBox>span:first-child {
-  color: white
+.reviewTextDateBox > span:first-child {
+  color: white;
 }
 
 .otherFooter {
@@ -229,7 +228,7 @@
   margin: 100px 0 30px 0;
   //border: 1px solid white;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .productInfoBox {
@@ -259,7 +258,8 @@
 }
 
 @media screen and (max-width: 1250px) {
-  .productInfoBox, .productReviewSection {
+  .productInfoBox,
+  .productReviewSection {
     width: 95%;
   }
 }
@@ -267,12 +267,13 @@
 @media screen and (max-width: 700px) {
   .productInfoBox {
     flex-direction: column;
-    margin-top: 100px
+    margin-top: 100px;
   }
-  .productInfoImageBox, .productDataBox {
+  .productInfoImageBox,
+  .productDataBox {
     width: 100%;
   }
   .productTotalPriceBox {
-    margin-top: 15px
+    margin-top: 15px;
   }
 }

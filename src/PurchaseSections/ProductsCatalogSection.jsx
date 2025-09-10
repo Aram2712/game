@@ -1,18 +1,25 @@
 
 import style from './purchase.module.scss';
-import { useState } from "react";
-import {IoIosSearch} from "react-icons/io";
+import { useEffect, useState } from "react";
+import { IoIosSearch } from "react-icons/io";
 import productImg from '../assets/previewImage.svg'
 import { Rating } from 'react-simple-star-rating'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useNavigate } from "react-router-dom";
+import { useGlobalContext } from '../context.jsx';
 
-function  ProductsCatalogSection() {
+function ProductsCatalogSection() {
+
+    const { productData, setProductData } = useGlobalContext();
 
     const autoYear = new Date().getFullYear();
 
     const navigate = useNavigate();
+
+    const [search, setSearch] = useState('');
+
+    const [displayData, setDisplayData] = useState([]);
 
     const [filterData, setFilterData] = useState([
         {
@@ -51,6 +58,29 @@ function  ProductsCatalogSection() {
         }));
     }
 
+    useEffect(() => {
+        const activeFilter = filterData.find(item => item.active);
+        if (activeFilter.title === 'All products') {
+            if (search == '') {
+                setDisplayData(productData);
+            }
+            else {
+                const filteredProducts = productData.filter(item => item.name.toLowerCase().includes(search.toLowerCase()));
+                setDisplayData(filteredProducts);
+            }
+        }
+        else {
+            if (search == '') {
+                const filteredProducts = productData.filter(item => item.type === activeFilter.title);
+                setDisplayData(filteredProducts);
+            }
+            else {
+                const filteredProducts = productData.filter(item => item.type === activeFilter.title && item.name.toLowerCase().includes(search.toLowerCase()));
+                setDisplayData(filteredProducts);
+            }
+        }
+    }, [filterData, productData, search]);
+
     return (
         <section className={style.ProductsCatalogSection}>
             <h2 className={style.feautureProductsTitle}>
@@ -63,13 +93,13 @@ function  ProductsCatalogSection() {
                             <span
                                 key={index}
                                 className={style.filterItemSpan}
-                                style = {{
+                                style={{
                                     backgroundColor: item.active ? '#281E11' : '#191919',
                                     border: item.active ? '1px solid #FF9F19' : '1px solid #FFFFFF1A'
                                 }}
-                                onClick = {() => changeActiveFilterData(item)}
+                                onClick={() => changeActiveFilterData(item)}
                             >
-                                { item.title }
+                                {item.title}
                             </span>
                         ))
                     }
@@ -78,23 +108,23 @@ function  ProductsCatalogSection() {
                     <IoIosSearch
                         className={style.searchIcon}
                     />
-                    <input className={style.input} placeholder={'Enter the text'}/>
+                    <input className={style.input} placeholder={'Enter the text'} value={search} onChange={e => setSearch(e.target.value)} />
                 </span>
             </div>
             <div className={style.allProductsBox}>
                 {
-                    Array.from({ length: 16 }).map((_, i) => (
+                    displayData?.map((prod, i) => (
                         <div className={style.productItem} key={i}>
                             <img
-                                src = {productImg}
+                                src={productImg}
                                 className={style.productImage}
-                                alt = 'product image'
-                                onClick = { () => navigate('/purchase/product') }
+                                alt='product image'
+                                onClick={() => navigate('/purchase/product', { state: { product: prod } })}
                             />
-                            <div className={style.sliderItemDataBox} style={{background: 'none', alignItems: 'flex-end'}}>
+                            <div className={style.sliderItemDataBox} style={{ background: 'none', alignItems: 'flex-end' }}>
                                 <div className={style.sliderItemNamePriceBox}>
-                                    <span className={style.sliderItemName}>NAME OF PRODUCT</span>
-                                    <span className={style.sliderItemPrice}>999 $</span>
+                                    <span className={style.sliderItemName}>{prod.name}</span>
+                                    <span className={style.sliderItemPrice}>{prod.price} $</span>
                                 </div>
                                 <span className={style.sliderItemStockSpan}>
                                     999 in Stock
@@ -128,28 +158,28 @@ function  ProductsCatalogSection() {
                     onSwiper={(swiper) => console.log(swiper)}
                     loop={true}
                 >
-                {
-                    Array.from({length: 3}).map((_, i) => (
-                        <SwiperSlide>
-                        <div className={style.reviewItemBox} key={i}>
-                            <div className={style.reviewTextDateBox}>
-                                <span>Thanks for the product!</span>
-                                <span>26.05.2025</span>
-                            </div>
-                            <div className={style.reviewItemRatingBox}>
-                                <Rating
-                                    initialValue={3}
-                                    iconsCount={5}
-                                    size={25}
-                                    fillColor={'#FF9F19'}
-                                    emptyColor={'#323232'}
-                                    allowHover={false}
-                                />
-                            </div>
-                        </div>
-                        </SwiperSlide>
-                    ))
-                }
+                    {
+                        Array.from({ length: 3 }).map((_, i) => (
+                            <SwiperSlide>
+                                <div className={style.reviewItemBox} key={i}>
+                                    <div className={style.reviewTextDateBox}>
+                                        <span>Thanks for the product!</span>
+                                        <span>26.05.2025</span>
+                                    </div>
+                                    <div className={style.reviewItemRatingBox}>
+                                        <Rating
+                                            initialValue={3}
+                                            iconsCount={5}
+                                            size={25}
+                                            fillColor={'#FF9F19'}
+                                            emptyColor={'#323232'}
+                                            allowHover={false}
+                                        />
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        ))
+                    }
                 </Swiper>
             </div>
             <footer className={style.otherFooter}>

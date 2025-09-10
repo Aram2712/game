@@ -1,6 +1,7 @@
 
 import style from './purchase.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import { FaChevronRight } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
@@ -24,14 +25,12 @@ function OurProductSection() {
             <div className={style.ourProductSliderBox}>
                 <Swiper
                     spaceBetween={20}
-                    slidesPerView={1} // базово для мобайла
+                    slidesPerView={'auto'}
                     breakpoints={{
-                        // when window width >= 640px -> tablet
                         640: {
                             slidesPerView: 2,
                             spaceBetween: 16,
                         },
-                        // when window width >= 1024px -> desktop
                         1024: {
                             slidesPerView: 4,
                             spaceBetween: 20,
@@ -39,10 +38,16 @@ function OurProductSection() {
                     }}
                     onSwiper={(swiper) => console.log(swiper)}
                     loop={true}
+                    speed={10000}
+                    modules={[Autoplay]}
+                    autoplay={{
+                        delay: 0,
+                        disableOnInteraction: false,
+                    }}
                 >
                     {
                         Array.from({ length: 10 }).map((_, i) => (
-                            <SwiperSlide>
+                            <SwiperSlide key={i}>
                                 <div className={style.ourProductCaruselItem}>
                                     <div className={style.sliderItemDataBox}>
                                         <div className={style.sliderItemNamePriceBox}>
@@ -51,9 +56,9 @@ function OurProductSection() {
                                         </div>
                                         <span className={style.sliderItemArrowSpan}>
                                             <FaChevronRight
-                                                style = {{color: '#FFFFFF80'}}
+                                                style={{ color: '#FFFFFF80' }}
                                                 className={style.carouselItemIcon}
-                                                onClick = { () => navigate('/purchase/product') }
+                                                onClick={() => navigate('/purchase/product')}
                                             />
                                         </span>
                                     </div>
