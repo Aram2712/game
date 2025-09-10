@@ -1,0 +1,278 @@
+
+.productPageContainer {
+  width: 99vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background:
+          linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%),   /* слева */
+          linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%),   /* справа */
+          url("../assets/purchase.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.productInfoBox {
+  width: 75%;
+  display: flex;
+  align-items: flex-start;
+  //border: 1px solid white;
+  margin-top: 150px;
+}
+
+.productInfoImageBox {
+  width: 50%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  //border: 1px solid white;
+}
+
+.productInfoImage {
+  width: 100%;
+}
+
+.productDataBox {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  //padding: 0 15px;
+  //border: 1px solid white;
+}
+
+.productInfoNameBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productInfoNameBox>h2 {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(24px, 2vw, 48px);
+  font-weight: 500;
+  margin: 0;
+}
+
+.productInfoStockSpan {
+  color: #44C54C;
+  font-family: 'Poppins', sans-serif;
+  background-color: #44C54C1A;
+  padding: 7px 15px;
+  border-radius: 5px;
+}
+
+.productTotalPriceBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+  border: 1px solid #FFFFFF1A;
+  background-color: #4A4A4A40;
+  border-radius: 5px;
+}
+
+.productTotalPriceTitle {
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.productTotalPriceValueText {
+  color: #FF9F19;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+.productInfoDescription {
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: white;
+  margin-top: 10px;
+}
+
+.productInfoQuantityBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.productInfoQuantityBox>label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: white;
+}
+
+.productInfoCountAndBtnBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  border: 1px solid #FFFFFF1A;
+  background-color: #4A4A4A40;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+.productCountBtn {
+  font-family: 'Poppins', sans-serif;
+  width: 30px;
+  height: 30px;
+  background-color: #4A4A4A40;
+  border: none;
+  color:#FFFFFF4D;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 100;
+}
+
+.productCountBtn:active {
+  background-color: #FF9F19;
+}
+
+.buttonsBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.buttonsBox>button {
+  width: 49%;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+.shopNowBtn {
+  background: linear-gradient(to right, #FF9F19, #EF6731);
+}
+
+.reviewBtnBox {
+  background: transparent;
+  border: 1px solid #FFFFFF1A !important;
+  color: white;
+}
+
+.productReviewSection {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  //border: 1px solid white;
+  margin: 50px auto 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.productReviewSection>h4 {
+  font-size: 18px;
+  color: #EF6731;
+}
+
+.productReviewsBox {
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.reviewItemBox {
+  flex: 1;
+  min-width: 320px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background-color: #1A1A1A;
+  padding: 15px;
+}
+
+.reviewTextDateBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #666565;
+}
+
+.reviewTextDateBox>span:first-child {
+  color: white
+}
+
+.otherFooter {
+  width: 95%;
+  max-width: 1300px;
+  display: flex;
+  align-items: center;
+  margin: 100px 0 30px 0;
+  //border: 1px solid white;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.productInfoBox {
+  display: flex;
+  align-items: stretch; /* заставляем оба бокса быть одинаковой высоты */
+  gap: 10px; /* если нужен отступ */
+}
+
+.productInfoImageBox {
+  flex: 1; /* занимает равную часть с dataBox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* обрежет лишнее */
+}
+
+.productInfoImage {
+  height: 100%;
+  width: 100%; /* чтобы сохранялись пропорции */
+  object-fit: cover; /* если хочешь чтобы картинка заполняла box */
+}
+
+.productDataBox {
+  flex: 1; /* равная ширина */
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1250px) {
+  .productInfoBox, .productReviewSection {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .productInfoBox {
+    flex-direction: column;
+    margin-top: 100px
+  }
+  .productInfoImageBox, .productDataBox {
+    width: 100%;
+  }
+  .productTotalPriceBox {
+    margin-top: 15px
+  }
+}

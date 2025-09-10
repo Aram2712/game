@@ -1,0 +1,216 @@
+
+.header-container {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // border: 1px solid white;
+    padding: 20px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 9;
+
+    // position: fixed;
+    // top: 0
+}
+
+.titleIcon {
+  height: 40px;
+  margin-right: 5px;
+}
+
+.headerTitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    color: white;
+    font-size: 32px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+
+.navigationContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    border: 1px solid #FFFFFF4D;
+    border-radius: 50px;
+}
+
+.navigationItem {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    margin: 0 15px;
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 50px;
+}
+
+.navigationItem:hover {
+    background-color: #FF9F19;
+}
+
+.loginBtn {
+    width: 160px;
+    height: 50px;
+    border-radius: 55px;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    background: linear-gradient(to right,#FF9F19, #EF6731);
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.loginBtn:active {
+    color: #666666
+}
+
+/* custom-video.scss */
+
+.cv-wrapper {
+  position: relative;
+  display: block;
+  outline: none; /* если хочешь показать фокус — настрой стили :focus */
+  background: #000; /* на случай, если видео не загрузилось */
+  width: 65%;  
+  overflow: hidden;
+}
+
+.cv-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: black;
+}
+
+/* Центральная кнопка */
+.cv-play-btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+//   box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  transition: transform 160ms ease, opacity 180ms ease, background 160ms ease;
+  opacity: 1;
+
+  /* hover/focus effect */
+  &:hover,
+  &:focus {
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+
+  /* когда видео играет — прячем кнопку */
+  &.playing {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+    pointer-events: none;
+  }
+
+  &.loading {
+    opacity: 0.6;
+    cursor: wait;
+  }
+}
+
+/* значок треугольника — чёрный для контраста */
+.cv-play-icon {
+  width: 36px;
+  height: 36px;
+  fill: #000; /* треугольник чёрный */
+  display: block;
+  margin-left: 3px; /* чуть смещаем, чтобы треугольник выглядел центровым */
+  transition: transform 160ms ease;
+}
+
+/* Небольшая подсказка снизу — скрывается при воспроизведении */
+.cv-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  transition: opacity 160ms ease;
+  .cv-hint {
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+/* Фокус-стиль (если хочешь показать) */
+.cv-wrapper:focus {
+  box-shadow: 0 0 0 4px rgba(50,115,220,0.12);
+}
+
+.mobileNavigation {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 10;
+  display: none;
+}
+
+.mobileMenuItem {
+  width: 100%;
+  font-size: 22px;
+  text-align: right;
+  border-bottom: 1px solid #EF6731;
+  padding: 15px;
+  border-radius: 0px;
+  margin: 0;
+}
+
+.burgerIcon {
+  display: none;
+}
+
+@media screen and (max-width: 1500px) {
+  .header-container {
+      width: 90%
+  }
+  .headerTitle {
+      font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+    .loginBtn, .navigationContainer {
+      display: none;
+    }
+    .mobileNavigation {
+      display: flex;
+    }
+    .burgerIcon {
+      display: inline-block;
+    }
+}

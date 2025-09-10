@@ -1,0 +1,399 @@
+
+
+.paymentPage {
+  margin-top: 120px;
+  display: flex;
+  width: 75%;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  //border: 1px solid white;
+}
+
+.paymentProduct {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  //height: 400px;
+  //background-color: #ef6731;
+  border-right: 1px solid #FFFFFF1A;
+  padding: 0 10px 0 0;
+}
+
+.productList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.productItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #FFFFFF1A;
+  padding: 15px 0;
+}
+
+.productItemImageAndPriceBox {
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+
+.previewImage {
+  width: 100px;
+  border-radius: 10px;
+}
+
+.productNameAndPriceBox {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  padding: 0 10px;
+}
+
+.productNameBox {
+  color: white;
+  font-size: 14px;
+}
+
+.productNameBox>span {
+  color: #666565;
+}
+
+.productPriceBox {
+  color: #FF9F19;
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.productDeleteIcon {
+  border: 1px solid #DF3A3A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 5px;
+  background-color: #DF3A3A4D;
+  cursor: pointer;
+}
+
+.allProductsTotalPrice {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.allProductsTotalPrice>span:first-child {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+.allProductsTotalPrice>span:last-child {
+  color: #FF9F19;
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.paymentMethods {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.paymentMethodsInputsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.paymentMethodHeadText {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+.paymentMethodHeadText>span:first-child {
+  color: #EF6731;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.paymentMethodInputBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 20px;
+}
+
+.paymentMethodInputBox>label {
+  color: white;
+}
+
+.paymentMethodInput {
+  height: 50px;
+  border: 1px solid #4A4A4A80;
+  outline: none;
+  background: transparent;
+  color: white;
+  padding-left: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.paymentMethodSelect {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #4A4A4A80;
+  padding: 0 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.paymentMethodSelectIcon {
+  padding: 5px;
+  border: 1px solid #4A4A4A80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF0F;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.paymentMethodSelectPlaceholder {
+  font-family: "Poppins", sans-serif;
+  color: #FFFFFF4D;
+  display: flex;
+  align-items: center;
+}
+
+.selectPlaceholderAndIconBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  cursor: pointer;
+}
+
+.selectOptionsBox {
+  width: 100%;
+  min-height: 200px;
+  background-color: #1C1C1C;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  padding: 0 10px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.selectOptionElement {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #4A4A4A80;
+  margin-top: 10px;
+}
+
+.selectOptionElement {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.selectOptionElement:hover {
+  background-color: #4A4A4A80;
+}
+
+.paymentMethodSelectImg {
+  margin-right: 15px;
+}
+
+.proceedToPaymentBtn {
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to right, #FF9F19, #EF6731);
+  font-family: "Poppins", sans-serif;
+  color: black;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmSection {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+
+.choosenPaymentData {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #FFFFFF1A;
+  background-color: #4A4A4A80;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+.paymentMethodCode {
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF4D;
+}
+
+.paymentDataBOx {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.paymentDataTitle {
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF80
+}
+
+.paymentDataValue {
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF
+}
+
+.paymentAutomaticallyTextBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #EF6731;
+  padding: 10px;
+  margin-top: 15px;
+  font-family: 'Poppins', sans-serif;
+  color: #EF6731;
+  border-radius: 5px;
+}
+
+.stepAndqrBox {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.stepBox {
+  width: 60px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stepOneSpan {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #EF6731;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepTwoSpan {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #EF6731;
+  background-color: #EF67311A;
+  color: #EF6731;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepLineSpan {
+  width: 1px;
+  height: calc(380px - 80px);
+  border: 1px solid transparent;
+  border-image: linear-gradient(to bottom, #EF6731, #EF673100) 1;
+}
+
+.qrAndOtherDataBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.sendPaymenttext {
+  color: #EF6731;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 5px;
+}
+
+.sendPaymentQrText {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.qrCodeBox {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin-top: 5px;
+}
+
+
+@media screen and (max-width: 1500px) {
+  .paymentPage {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .paymentPage {
+    flex-direction: column;
+    width: 100%;
+  }
+  .paymentProduct, .paymentMethods, .confirmSection {
+    width: 100%;
+  }
+  .proceedToPaymentBtn, .paymentMethods, .confirmSection {
+    margin-top: 20px;
+  }
+  .paymentAutomaticallyTextBox, .sendPaymenttext, .sendPaymentQrText {
+    font-size: 13px;
+  }
+
+  .qrCodeBox {
+    width: 140px;
+    height: 140px;
+  }
+}
