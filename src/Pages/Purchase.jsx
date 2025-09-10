@@ -1,5 +1,5 @@
 
-import styles from "./Pages.module.scss";
+import styles from "./pages.module.scss";
 import TitleSearchSection from "../PurchaseSections/TitleSearchSection.jsx";
 import OurProductSection from "../PurchaseSections/OurProductSection.jsx";
 import ProductsCatalogSection from "../PurchaseSections/ProductsCatalogSection.jsx";
