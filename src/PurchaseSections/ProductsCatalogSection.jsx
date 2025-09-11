@@ -8,10 +8,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from '../context.jsx';
+import Footer from '../MainSections/Footer.jsx';
 
 function ProductsCatalogSection() {
 
-    const { productData, setProductData } = useGlobalContext();
+    const { productData } = useGlobalContext();
 
     const autoYear = new Date().getFullYear();
 
@@ -182,13 +183,14 @@ function ProductsCatalogSection() {
                     }
                 </Swiper>
             </div>
-            <footer className={style.otherFooter}>
+            <Footer />
+            {/* <footer className={style.otherFooter}>
                 <div className={style.footerContent}>
                     <p className={style.footerText}>
                         &copy; {autoYear} All rights reserved.
                     </p>
                 </div>
-            </footer>
+            </footer> */}
         </section>
     )
 }

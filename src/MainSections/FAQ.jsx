@@ -150,7 +150,7 @@ function FAQ() {
                                     }}
                                     className='faqHiddenBox'
                                 >
-                                    <p style={{marginBottom:'15px'}}>{item.text}</p>
+                                    <p style={{ marginBottom: '15px' }}>{item.text}</p>
                                 </div>
                             </div>
                         ))

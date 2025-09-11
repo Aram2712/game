@@ -10,7 +10,6 @@
     background-size: cover;
     background-position: top;
     position: relative;
-
 }
 
 .titleAndMainImageBox {
@@ -212,7 +211,6 @@
     color: white;
     font-size: 16px;
     background-color: rgba(10, 10, 10, 0.55);
-    
 }
 
 // .footer {
@@ -242,13 +240,11 @@
 .footerNav {
     display: flex;
     gap: 1.5rem;
-
     a {
         color: #666666;
         text-decoration: none;
         font-size: 0.9rem;
         transition: color 0.3s ease;
-
         &:hover {
             color: #c9c9c9;
         }

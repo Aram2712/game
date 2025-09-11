@@ -1,6 +1,7 @@
 
 import style from './product.module.scss';
 import {Rating} from "react-simple-star-rating";
+import Footer from '../MainSections/Footer.jsx';
 
 function ProductReviewSection() {
 
@@ -33,13 +34,14 @@ function ProductReviewSection() {
                 })
             }
             </div>
-            <footer className={style.otherFooter}>
+            <Footer />
+            {/* <footer className={style.otherFooter}>
                 <div className={style.footerContent}>
                     <p className={style.footerText}>
                         &copy; {autoYear} All rights reserved.
                     </p>
                 </div>
-            </footer>
+            </footer> */}
         </div>
     )
 }

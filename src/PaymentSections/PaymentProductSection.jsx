@@ -3,10 +3,22 @@ import style from './payment.module.scss';
 import preview from '../assets/previewImage.svg';
 import { RiCloseLargeLine } from "react-icons/ri";
 import { useGlobalContext } from '../context';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function PaymentProductSection() {
 
     const { card, setCard } = useGlobalContext();
+
+    const navigate = useNavigate();
+
+    const deleteItem = (item) => {
+        const updatedCard = card?.filter((product) => product.cardId !== item.cardId);
+        setCard(updatedCard);
+        if (updatedCard.length === 0) {
+            navigate('/purchase');
+        }
+    }
 
     return (
         <div className={style.paymentProduct}>
@@ -25,7 +37,7 @@ function PaymentProductSection() {
                                 <span className={style.productDeleteIcon}>
                                     <RiCloseLargeLine
                                         style={{ color: '#DF3A3A' }}
-                                        onClick={() => setCard(card => card?.filter((product) => product.id !== item.id))}
+                                        onClick={deleteItem.bind(this, item)}
                                     />
                                 </span>
                             </div>

@@ -16,7 +16,7 @@ import polygon from '../assets/polygon.svg';
 import bnb from '../assets/bnb.svg';
 import Confirm from './Confirm.jsx'
 
-function PaymentMethodsSection(props) {
+function PaymentMethodsSection() {
 
     const [showPayment, setShowPayment] = useState(false);
     const [paymentTypes, setPaymentTypes] = useState([
@@ -176,8 +176,11 @@ function PaymentMethodsSection(props) {
                                 {
                                     choosenPayment ?
                                         <span className={style.paymentMethodSelectPlaceholder}>
-                                            <img src={choosenPayment.icon} className={style.paymentMethodSelectImg}
-                                                alt='icon' />
+                                            <img 
+                                                src={choosenPayment.icon} 
+                                                className={style.paymentMethodSelectImg}
+                                                alt='icon' 
+                                            />
                                             {choosenPayment.title}
                                         </span>
                                         :

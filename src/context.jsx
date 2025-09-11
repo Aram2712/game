@@ -46,7 +46,6 @@ export const AppProvider = ({ children }) => {
 
     const [card, setCard] = useState([]);
 
-
     const [productData, setProductData] = useState([
         {
             id: 1,

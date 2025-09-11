@@ -25,7 +25,7 @@ function ProductInfoSection({ product }) {
     }
 
     const addToCard = () => {
-        setCard([...card, currentProduct]);
+        setCard([...card, { ...currentProduct, cardId: Date.now() }]);
     }
 
     return (
