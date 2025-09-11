@@ -8,7 +8,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from '../context.jsx';
-import Footer from '../MainSections/Footer.jsx';
 
 function ProductsCatalogSection() {
 
@@ -183,7 +182,6 @@ function ProductsCatalogSection() {
                     }
                 </Swiper>
             </div>
-            <Footer />
             {/* <footer className={style.otherFooter}>
                 <div className={style.footerContent}>
                     <p className={style.footerText}>

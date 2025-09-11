@@ -1,26 +1,35 @@
-
-.Home, .Purchase, .productPage{
+.Home,
+.Purchase,
+.productPage {
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   //background: #101010;
   position: relative;
   overflow-y: auto;
+  background:
+    linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%),
+    /* слева */ linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%),
+    /* справа */ url("../assets/purchase.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .paymentPage {
-  width: 99vw;
+  width: 100vw;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background:
-          linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%),   /* слева */
-          linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%),   /* справа */
-          url("../assets/purchase.svg");
+    linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%),
+    /* слева */ linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%),
+    /* справа */ url("../assets/purchase.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

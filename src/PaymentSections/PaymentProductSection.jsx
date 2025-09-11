@@ -3,10 +3,9 @@ import style from './payment.module.scss';
 import preview from '../assets/previewImage.svg';
 import { RiCloseLargeLine } from "react-icons/ri";
 import { useGlobalContext } from '../context';
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function PaymentProductSection() {
+function PaymentProductSection({ showConfirmed }) {
 
     const { card, setCard } = useGlobalContext();
 
@@ -34,12 +33,15 @@ function PaymentProductSection() {
                                         <span className={style.productPriceBox}>{item.cardCount * item.price} €</span>
                                     </div>
                                 </div>
-                                <span className={style.productDeleteIcon}>
-                                    <RiCloseLargeLine
-                                        style={{ color: '#DF3A3A' }}
-                                        onClick={deleteItem.bind(this, item)}
-                                    />
-                                </span>
+                                {
+                                    showConfirmed ? null :
+                                        <span className={style.productDeleteIcon}>
+                                            <RiCloseLargeLine
+                                                style={{ color: '#DF3A3A' }}
+                                                onClick={deleteItem.bind(this, item)}
+                                            />
+                                        </span>
+                                }
                             </div>
                         )
                     })

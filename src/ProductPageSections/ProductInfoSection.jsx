@@ -1,8 +1,8 @@
 
 import style from './product.module.scss';
 import productImg from '../assets/previewImage.svg';
-import { useState } from "react";
 import ProductReviewSection from '../ProductPageSections/ProductReviewSection.jsx';
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useGlobalContext } from '../context.jsx';
 import { HiOutlineMinus } from "react-icons/hi";

@@ -16,7 +16,7 @@ import polygon from '../assets/polygon.svg';
 import bnb from '../assets/bnb.svg';
 import Confirm from './Confirm.jsx'
 
-function PaymentMethodsSection() {
+function PaymentMethodsSection({ showConfirmed, setShowConfirmed }) {
 
     const [showPayment, setShowPayment] = useState(false);
     const [paymentTypes, setPaymentTypes] = useState([
@@ -138,7 +138,6 @@ function PaymentMethodsSection() {
     const [choosenNetwork, setChoosenNetwork] = useState(null);
     const [showCryptoMethod, setShowCryptoMethod] = useState(false);
     const [showNetwork, setShowNetwork] = useState(false);
-    const [showConfirmed, setShowConfirmed] = useState(false);
 
     return (
         !showConfirmed ?
