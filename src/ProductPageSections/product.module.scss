@@ -1,5 +1,5 @@
 .productPageContainer {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -279,5 +279,8 @@
   }
   .productTotalPriceBox {
     margin-top: 15px;
+  }
+  .productReviewsBox {
+    width: 100%;
   }
 }
