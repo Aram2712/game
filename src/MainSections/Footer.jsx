@@ -6,9 +6,9 @@ function Footer() {
 
     const autoYear = new Date().getFullYear();
     const location = useLocation();
-    console.log(location)
+  
     return (
-        <footer className='footerSection' style={{ marginTop: location.pathname === '/purchase/payment' ? '0px' : '100px' }}>
+        <footer className='footerSection' style={{ marginTop: (location.pathname === '/purchase/payment' || location.pathname === '/purchase/product') ? '0px' : '100px' }}>
             <div className='footerContent'>
                 <p className='footerText'>
                     &copy; {autoYear} All rights reserved.

@@ -4,6 +4,60 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /*overflow-x: hidden;*/
 }
 
+/* Переменные для прозрачного тёмного скролла */
+:root {
+  --scroll-track: rgba(0, 0, 0, 0.2);       /* тёмный фон скролла */
+  --scroll-thumb: rgba(255, 255, 255, 0.15);/* полупрозрачный ползунок */
+  --scroll-thumb-hover: rgba(255, 255, 255, 0.35);
+  --scroll-radius: 8px;
+}
+
+/* WebKit (Chrome, Edge, Safari) */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+  border-radius: var(--scroll-radius);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: var(--scroll-radius);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: background 0.2s ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
+
+/* Локальные скроллы для контейнеров */
+.scrollable {
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.scrollable::-webkit-scrollbar { width: 10px; }
+.scrollable::-webkit-scrollbar-track { background: var(--scroll-track); }
+.scrollable::-webkit-scrollbar-thumb { 
+  background: var(--scroll-thumb); 
+  border-radius: 999px; 
+  border: 2px solid transparent; 
+  background-clip: padding-box; 
+  transition: background 0.2s ease;
+}
+.scrollable::-webkit-scrollbar-thumb:hover { 
+  background: var(--scroll-thumb-hover); 
+}

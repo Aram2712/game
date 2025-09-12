@@ -1,12 +1,15 @@
 .paymentPage {
   display: flex;
   width: 75%;
+  // max-height: 90%;
   height: 100%;
   padding-bottom: 50px;
 }
 
 .paymentProduct {
   width: 40%;
+  max-height: 700px;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
