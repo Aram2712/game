@@ -8,8 +8,6 @@
 
 .paymentProduct {
   width: 40%;
-  max-height: 700px;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -22,6 +20,8 @@
 
 .productList {
   width: 100%;
+  max-height: 500px;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
@@ -85,6 +85,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 50px 0 10px 0;
 }
 
 .allProductsTotalPrice > span:first-child {

@@ -8,14 +8,14 @@ import ProductPage from './Pages/ProductPage.jsx';
 import Payment from './Pages/Payment.jsx';
 
 function App() {
-    return(
+    return (
         <div className='App'>
-            <Header/>
+            <Header />
             <Routes>
-                <Route path = "/" element = { <Home/> } />
-                <Route path = '/purchase' element = { <Purchase/> } />
-                <Route path = '/purchase/product' element = { <ProductPage/> } />
-                <Route path = '/purchase/payment' element = { <Payment/> } />
+                <Route path="/" element={<Home />} />
+                <Route path='/purchase' element={<Purchase />} />
+                <Route path='/purchase/product' element={<ProductPage />} />
+                <Route path='/purchase/payment' element={<Payment />} />
             </Routes>
         </div>
     )
