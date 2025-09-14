@@ -146,6 +146,12 @@ function PaymentMethodsSection({ showConfirmed, setShowConfirmed }) {
         }
     }, [choosenPayment]);
 
+    const successConfirm = () => {
+        if ((choosenPayment && choosenPayment?.title === 'Crypto' && choosenCryptoMethod?.title && choosenNetwork?.title) || (choosenPayment && choosenPayment.title !== "Crypto")){
+            return true;
+        }
+    }
+
     return (
         !showConfirmed ?
             <div className={style.paymentMethods}>
@@ -374,16 +380,15 @@ function PaymentMethodsSection({ showConfirmed, setShowConfirmed }) {
                 <button
                     className={style.proceedToPaymentBtn}
                     onClick={() => {
-                        if (choosenCryptoMethod || choosenPayment) setShowConfirmed(true);
+                        if (successConfirm()) setShowConfirmed(true);
                     }}
                 >
                     Proceed to Payment
                 </button>
             </div>
             :
-            (choosenCryptoMethod || choosenPayment) &&
             <Confirm
-                paymentType={choosenCryptoMethod || choosenPayment}
+                paymentType={choosenCryptoMethod}
             />
     )
 }

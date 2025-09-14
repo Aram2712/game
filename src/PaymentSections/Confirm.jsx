@@ -13,11 +13,11 @@ function Confirm ({paymentType}) {
                 <span className={style.choosenPaymentData}>
                     <span className={style.paymentMethodSelectPlaceholder} style={{color: 'white'}}>
                         <img
-                            src={paymentType.icon}
+                            src={paymentType?.icon}
                             className={style.paymentMethodSelectImg}
                             alt='icon'
                         />
-                        {paymentType.title}
+                        {paymentType?.title}
                     </span>
                     <span className={style.paymentMethodCode}>9asdd5f4a56sd4a6sgas</span>
                 </span>
