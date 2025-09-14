@@ -1,7 +1,7 @@
 import style from './payment.module.scss';
 import { IoChevronDownOutline } from "react-icons/io5";
 import { IoChevronUpOutline } from "react-icons/io5";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import crypto from '../assets/crypto.svg';
 import paypal from "../assets/paypal.svg";
 import stripe from "../assets/stripe.svg";
@@ -138,6 +138,13 @@ function PaymentMethodsSection({ showConfirmed, setShowConfirmed }) {
     const [choosenNetwork, setChoosenNetwork] = useState(null);
     const [showCryptoMethod, setShowCryptoMethod] = useState(false);
     const [showNetwork, setShowNetwork] = useState(false);
+
+    useEffect(() => {
+        if(choosenPayment?.title !== "Crypto"){
+            setChoosenCryptoMethod(null);
+            setChoosenNetwork(null)
+        }
+    }, [choosenPayment]);
 
     return (
         !showConfirmed ?
